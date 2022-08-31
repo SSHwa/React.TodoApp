@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Form({ value, setValue, handleSubmit }) {
+  console.log("form components");
   const handleChange = (e) => {
     //console.log(e, e.target.value);
     setValue(e.target.value);
