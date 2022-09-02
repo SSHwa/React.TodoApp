@@ -3,7 +3,7 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import List from "./List";
 
 const Lists = React.memo(({ todoData, setTodoData, handleXClick }) => {
-  console.log("lists components");
+  // console.log("lists components");
   const handleEnd = (result) => {
     console.log(result);
 
@@ -14,6 +14,7 @@ const Lists = React.memo(({ todoData, setTodoData, handleXClick }) => {
 
     newTodoData.splice(result.destination.index, 0, reorderedItem); // 'destnation위치'의 아이템 위치에 '삭제한 아이템' 추가
     setTodoData(newTodoData);
+    localStorage.setItem("todoData", JSON.stringify(newTodoData));
   };
 
   return (
